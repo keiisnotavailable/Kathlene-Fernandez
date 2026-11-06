@@ -26,6 +26,7 @@ const navigation = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <title>Kathlene Fernandez Portfolio</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -67,6 +68,21 @@ const navigation = [
     </main>
     <slot name="scripts" />
     <script>
+      const page = document.body;
+      let pointerFrame = 0;
+
+      page.addEventListener('pointermove', (event) => {
+        if (pointerFrame) {
+          cancelAnimationFrame(pointerFrame);
+        }
+
+        pointerFrame = requestAnimationFrame(() => {
+          page.style.setProperty('--mouse-x', `${event.clientX}px`);
+          page.style.setProperty('--mouse-y', `${event.clientY}px`);
+          pointerFrame = 0;
+        });
+      });
+
       const sidebar = document.querySelector('.sidebar');
       const menuToggle = document.querySelector('.menu-toggle');
 
