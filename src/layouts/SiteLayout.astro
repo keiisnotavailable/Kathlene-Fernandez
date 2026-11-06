@@ -1,0 +1,94 @@
+---
+import '../styles.css';
+
+interface Props {
+  title: string;
+  activePage: string;
+  background: string;
+}
+
+const { title, activePage, background } = Astro.props;
+
+const navigation = [
+  { label: 'home', href: '/' },
+  { label: 'about', href: '/about' },
+  { label: 'projects', href: '/projects' },
+  { label: 'skills', href: '/skills' },
+  { label: 'achievements', href: '/achievements' },
+  { label: 'contact', href: '/contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <slot name="head" />
+  </head>
+  <body class="page-bg" style={`background-image: url('${background}');`}>
+    <aside class="sidebar">
+      <div class="logo-container">
+        <span class="logo">kei.</span>
+        <span class="logo-sub">portfolio</span>
+        <div class="logo-tagline">UI/UX & Multimedia Design</div>
+      </div>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-menu" id="site-navigation">
+        {navigation.map(({ label, href }) => (
+          <a href={href} class:list={['nav-item', { active: activePage === label }]}>{label}</a>
+        ))}
+      </nav>
+      <div class="sidebar-footer">
+        <span>NU MOA • BSIT</span>
+      </div>
+    </aside>
+
+    <main class="content-container">
+      <slot />
+    </main>
+    <slot name="scripts" />
+    <script>
+      const sidebar = document.querySelector('.sidebar');
+      const menuToggle = document.querySelector('.menu-toggle');
+
+      if (sidebar instanceof HTMLElement && menuToggle instanceof HTMLButtonElement) {
+        menuToggle.addEventListener('click', () => {
+          const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+          menuToggle.setAttribute(
+            'aria-label',
+            isExpanded ? 'Open navigation menu' : 'Close navigation menu',
+          );
+          sidebar.classList.toggle('is-open', !isExpanded);
+        });
+
+        sidebar.querySelectorAll('.nav-item').forEach((item) => {
+          item.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation menu');
+            sidebar.classList.remove('is-open');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

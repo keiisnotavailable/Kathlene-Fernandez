@@ -1,0 +1,195 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+
+const projects = [
+  {
+    title: 'Sample Project 01',
+    image: '/about-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the problem it solves.',
+  },
+  {
+    title: 'Sample Project 02',
+    image: '/skills-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the process behind it.',
+  },
+  {
+    title: 'Sample Project 03',
+    image: '/interests-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and its outcome.',
+  },
+  {
+    title: 'Sample Project 04',
+    image: '/achievements-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the problem it solves.',
+  },
+  {
+    title: 'Sample Project 05',
+    image: '/contact-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the process behind it.',
+  },
+  {
+    title: 'Sample Project 06',
+    image: '/hero-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and its outcome.',
+  },
+  {
+    title: 'Sample Project 07',
+    image: '/about-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the problem it solves.',
+  },
+  {
+    title: 'Sample Project 08',
+    image: '/skills-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the process behind it.',
+  },
+  {
+    title: 'Sample Project 09',
+    image: '/interests-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and its outcome.',
+  },
+  {
+    title: 'Sample Project 10',
+    image: '/achievements-bg.jpg',
+    category: 'Add project category',
+    year: 'Add year',
+    role: 'Add your role',
+    tools: 'Add tools used',
+    description: 'Replace this placeholder with a description of your project and the problem it solves.',
+  },
+];
+---
+
+<SiteLayout title="Projects" activePage="projects" background="/achievements-bg.jpg">
+  <section id="projects" class="projects-section">
+    <div class="section-header">
+      <span class="subtitle">02 // selected work</span>
+      <h2>projects</h2>
+      <p class="projects-intro">
+        Sample gallery cards for now. Replace the sample photos and details with your own work.
+      </p>
+    </div>
+
+    <div class="project-grid">
+      {projects.map((project) => (
+        <button
+          class="project-card"
+          type="button"
+          data-project-title={project.title}
+          data-project-image={project.image}
+          data-project-category={project.category}
+          data-project-year={project.year}
+          data-project-role={project.role}
+          data-project-tools={project.tools}
+          data-project-description={project.description}
+          aria-haspopup="dialog"
+        >
+          <span class="project-image-wrap">
+            <img src={project.image} alt="" class="project-image" loading="lazy" />
+            <span class="project-view-label">View project</span>
+          </span>
+          <span class="project-title">{project.title}</span>
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <dialog class="project-dialog" aria-labelledby="project-dialog-title">
+    <div class="project-dialog-content">
+      <button class="project-dialog-close" type="button" aria-label="Close project details">
+        &times;
+      </button>
+      <img class="project-dialog-image" alt="" />
+      <div class="project-dialog-copy">
+        <span class="subtitle project-dialog-category"></span>
+        <h2 id="project-dialog-title"></h2>
+        <p class="project-dialog-description"></p>
+        <dl class="project-details">
+          <div><dt>Year</dt><dd class="project-dialog-year"></dd></div>
+          <div><dt>Role</dt><dd class="project-dialog-role"></dd></div>
+          <div><dt>Tools</dt><dd class="project-dialog-tools"></dd></div>
+        </dl>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const projectDialog = document.querySelector('.project-dialog');
+    const projectDialogImage = document.querySelector('.project-dialog-image');
+    const projectDialogTitle = document.querySelector('#project-dialog-title');
+    const projectDialogCategory = document.querySelector('.project-dialog-category');
+    const projectDialogDescription = document.querySelector('.project-dialog-description');
+    const projectDialogYear = document.querySelector('.project-dialog-year');
+    const projectDialogRole = document.querySelector('.project-dialog-role');
+    const projectDialogTools = document.querySelector('.project-dialog-tools');
+    const projectDialogClose = document.querySelector('.project-dialog-close');
+
+    if (
+      projectDialog instanceof HTMLDialogElement &&
+      projectDialogImage instanceof HTMLImageElement &&
+      projectDialogTitle instanceof HTMLHeadingElement &&
+      projectDialogCategory instanceof HTMLElement &&
+      projectDialogDescription instanceof HTMLParagraphElement &&
+      projectDialogYear instanceof HTMLElement &&
+      projectDialogRole instanceof HTMLElement &&
+      projectDialogTools instanceof HTMLElement &&
+      projectDialogClose instanceof HTMLButtonElement
+    ) {
+      document.querySelectorAll<HTMLButtonElement>('.project-card').forEach((card) => {
+        card.addEventListener('click', () => {
+          projectDialogImage.src = card.dataset.projectImage ?? '';
+          projectDialogImage.alt = card.dataset.projectTitle ?? '';
+          projectDialogTitle.textContent = card.dataset.projectTitle ?? '';
+          projectDialogCategory.textContent = card.dataset.projectCategory ?? '';
+          projectDialogDescription.textContent = card.dataset.projectDescription ?? '';
+          projectDialogYear.textContent = card.dataset.projectYear ?? '';
+          projectDialogRole.textContent = card.dataset.projectRole ?? '';
+          projectDialogTools.textContent = card.dataset.projectTools ?? '';
+          projectDialog.showModal();
+        });
+      });
+
+      projectDialogClose.addEventListener('click', () => projectDialog.close());
+      projectDialog.addEventListener('click', (event) => {
+        if (event.target === projectDialog) {
+          projectDialog.close();
+        }
+      });
+    }
+  </script>
+</SiteLayout>

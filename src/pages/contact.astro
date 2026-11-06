@@ -1,0 +1,60 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+
+<SiteLayout title="Contact" activePage="contact" background="/contact-bg.jpg">
+  <section id="contact" class="contact-section">
+    <div class="contact-card">
+      <span class="subtitle">get in touch</span>
+      <h2>Get in Touch</h2>
+      <p>I am always excited to collaborate and learn more!</p>
+
+      <div class="contact-links">
+        <div class="direct-contact">
+          <a href="mailto:kathlenefernandez897@gmail.com" class="email-btn">
+            <i data-lucide="mail"></i> Email Me
+          </a>
+          <a
+            href="/resume.pdf"
+            class="resume-btn"
+            download="KathleneFernandez_Resume.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            <i data-lucide="download"></i> Download Resume
+          </a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/keiisnotavailable" target="_blank" rel="noopener">
+            <i data-lucide="github"></i> <span>github</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kathlene-fernandez-78967a39b/"
+            target="_blank"
+            rel="noopener"
+          >
+            <i data-lucide="linkedin"></i> <span>linkedin</span>
+          </a>
+          <a href="https://web.facebook.com/keidaisies" target="_blank" rel="noopener">
+            <i data-lucide="facebook"></i> <span>facebook</span>
+          </a>
+          <a href="https://www.instagram.com/tmisukei.k" target="_blank" rel="noopener">
+            <i data-lucide="instagram"></i> <span>instagram</span>
+          </a>
+          <a href="https://twitter.com/keizynk" target="_blank" rel="noopener">
+            <i data-lucide="twitter"></i> <span>twitter</span>
+          </a>
+        </div>
+      </div>
+      <a class="contact-phone" href="tel:+639665666195">
+        <i data-lucide="phone"></i> +63 966 566 6195
+      </a>
+    </div>
+  </section>
+</SiteLayout>
+
+<script is:inline src="https://unpkg.com/lucide@latest"></script>
+<script is:inline>
+  lucide.createIcons();
+</script>
