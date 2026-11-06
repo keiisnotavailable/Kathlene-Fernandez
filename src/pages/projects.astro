@@ -3,53 +3,55 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 
 const projects = [
   {
-    title: 'Sample Project 01',
-    image: '/about-bg.jpg',
-    category: 'Add project category',
-    year: 'Add year',
-    role: 'Add your role',
-    tools: 'Add tools used',
-    description: 'Replace this placeholder with a description of your project and the problem it solves.',
+    title: 'MBY TAILS',
+    images: ['/mby.png', '/mby3.png', '/mby4.png'], 
+    category: 'Capstone Project',
+    year: '2026',
+    role: 'Lead Programmer, Web UI/UX Designer',
+    tools: 'Figma, Canva, React, Tailwind CSS, JavaScript, Node.js, Express, Firebase, Git',
+    description: 'An intelligent animal welfare management platform designed to streamline shelter operations and accelerate pet adoptions for MBY Pet Rescue and Sanctuary. Features an end-to-end design system, accessible UI flows, interactive matchmaking tools, and automated AI bio generation.',
+    liveDemo: 'https://mby-tails.com/',
   },
   {
-    title: 'Sample Project 02',
-    image: '/skills-bg.jpg',
-    category: 'Add project category',
-    year: 'Add year',
-    role: 'Add your role',
-    tools: 'Add tools used',
-    description: 'Replace this placeholder with a description of your project and the process behind it.',
+    title: 'Bulldogs eXchange',
+    images: ['/bulldogs-exchange.png', '/bulldogs2.png'],
+    video: '/bulldogsvid.mp4',
+    category: 'Game Development, Video Editing',
+    year: '2026',
+    role: 'Game UI/UX, Visual Designer ',
+    tools: 'Unity, Figma, Visual Asset Integration, C#',
+    description: 'A 3D Weeping Angel horror interactive game and storytelling experience created in Unity. Highlights custom retro typography, immersive UI/UX layout design, C# mechanics, and video editing for dynamic gameplay sequences.',
   },
   {
-    title: 'Sample Project 03',
-    image: '/interests-bg.jpg',
-    category: 'Add project category',
-    year: 'Add year',
-    role: 'Add your role',
-    tools: 'Add tools used',
-    description: 'Replace this placeholder with a description of your project and its outcome.',
+    title: 'Moonstoria Hotel',
+    images: ['/moonstoria.png', '/moonstoria2.png', '/moonstoria3.png'],
+    category: 'Full Stack Web Development, UI/UX Project',
+    year: '2026',
+    role: 'UI/UX Developer, Visual Designer',
+    tools: 'MongoDB, Express, React, Node.js, Tailwind CSS, Figma, Canva',
+    description: 'A full-stack hotel booking interface featuring a dark gothic aesthetic, high-contrast typography, and atmospheric visual storytelling. Crafted custom visual assets in Figma and Canva, paired with an intuitive booking flow, custom crypt/room selection inputs, and smooth micro-interactions across modern web frameworks.',
   },
   {
-    title: 'Sample Project 04',
-    image: '/achievements-bg.jpg',
-    category: 'Add project category',
-    year: 'Add year',
-    role: 'Add your role',
-    tools: 'Add tools used',
-    description: 'Replace this placeholder with a description of your project and the problem it solves.',
+    title: 'ICONIK Tote Shop',
+    images: ['/iconik.jpg', '/iconik2.jpg', '/iconik3.jpg', '/iconik4.jpg'],
+    category: 'Web System Design, Prototype',
+    year: '2025',
+    role: 'Web Design Developer',
+    tools: 'Figma, Canva',
+    description: 'An e-commerce prototype and brand identity project blending art, fashion, and functional design. Features high-fidelity Figma prototypes, custom typography layouts, product showcase carousels, and minimalist navigation.',
   },
   {
-    title: 'Sample Project 05',
-    image: '/contact-bg.jpg',
-    category: 'Add project category',
-    year: 'Add year',
-    role: 'Add your role',
-    tools: 'Add tools used',
-    description: 'Replace this placeholder with a description of your project and the process behind it.',
+    title: 'Fila Fusion ZH',
+    images: ['/fila.png', '/fila2.png', '/fila3.png', '/fila4.png'],
+    category: 'Web System Design',
+    year: '2025',
+    role: 'Web Design Developer',
+    tools: 'Figma, Canva, HTML5, CSS3',
+    description: 'A modern web system and interface design concept crafted for FILA FUSION Zhang Hao edition. Features custom brand layout components, high-contrast typography, seamless authentication UI, and campaign media integration.',
   },
   {
     title: 'Sample Project 06',
-    image: '/hero-bg.jpg',
+    images: ['/hero-bg.jpg'],
     category: 'Add project category',
     year: 'Add year',
     role: 'Add your role',
@@ -58,7 +60,7 @@ const projects = [
   },
   {
     title: 'Sample Project 07',
-    image: '/about-bg.jpg',
+    images: ['/about-bg.jpg'],
     category: 'Add project category',
     year: 'Add year',
     role: 'Add your role',
@@ -67,7 +69,7 @@ const projects = [
   },
   {
     title: 'Sample Project 08',
-    image: '/skills-bg.jpg',
+    images: ['/skills-bg.jpg'],
     category: 'Add project category',
     year: 'Add year',
     role: 'Add your role',
@@ -76,7 +78,7 @@ const projects = [
   },
   {
     title: 'Sample Project 09',
-    image: '/interests-bg.jpg',
+    images: ['/interests-bg.jpg'],
     category: 'Add project category',
     year: 'Add year',
     role: 'Add your role',
@@ -85,7 +87,7 @@ const projects = [
   },
   {
     title: 'Sample Project 10',
-    image: '/achievements-bg.jpg',
+    images: ['/achievements-bg.jpg'],
     category: 'Add project category',
     year: 'Add year',
     role: 'Add your role',
@@ -99,9 +101,9 @@ const projects = [
   <section id="projects" class="projects-section">
     <div class="section-header">
       <span class="subtitle">02 // selected work</span>
-      <h2>projects</h2>
+      <h2>Projects & Works</h2>
       <p class="projects-intro">
-        Sample gallery cards for now. Replace the sample photos and details with your own work.
+        A curated selection of UI/UX layouts, visual identity assets, interactive designs, and media projects.
       </p>
     </div>
 
@@ -111,16 +113,18 @@ const projects = [
           class="project-card"
           type="button"
           data-project-title={project.title}
-          data-project-image={project.image}
+          data-project-images={JSON.stringify(project.images)}
+          data-project-video={project.video}
           data-project-category={project.category}
           data-project-year={project.year}
           data-project-role={project.role}
           data-project-tools={project.tools}
           data-project-description={project.description}
+          data-project-live-demo={project.liveDemo}
           aria-haspopup="dialog"
         >
           <span class="project-image-wrap">
-            <img src={project.image} alt="" class="project-image" loading="lazy" />
+            <img src={project.images[0]} alt="" class="project-image" loading="lazy" />
             <span class="project-view-label">View project</span>
           </span>
           <span class="project-title">{project.title}</span>
@@ -134,11 +138,29 @@ const projects = [
       <button class="project-dialog-close" type="button" aria-label="Close project details">
         &times;
       </button>
-      <img class="project-dialog-image" alt="" />
+      <div class="project-dialog-gallery">
+        <div class="project-dialog-track"></div>
+        <button class="project-gallery-arrow project-gallery-prev" type="button" aria-label="Previous project image">
+          &#8249;
+        </button>
+        <button class="project-gallery-arrow project-gallery-next" type="button" aria-label="Next project image">
+          &#8250;
+        </button>
+        <div class="project-gallery-dots" aria-label="Project images"></div>
+      </div>
       <div class="project-dialog-copy">
         <span class="subtitle project-dialog-category"></span>
         <h2 id="project-dialog-title"></h2>
         <p class="project-dialog-description"></p>
+        <a
+          class="project-demo-btn"
+          href="https://mby-tails.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          hidden
+        >
+          Visit Live Demo
+        </a>
         <dl class="project-details">
           <div><dt>Year</dt><dd class="project-dialog-year"></dd></div>
           <div><dt>Role</dt><dd class="project-dialog-role"></dd></div>
@@ -150,10 +172,15 @@ const projects = [
 
   <script>
     const projectDialog = document.querySelector('.project-dialog');
-    const projectDialogImage = document.querySelector('.project-dialog-image');
+    const projectDialogGallery = document.querySelector('.project-dialog-gallery');
+    const projectDialogTrack = document.querySelector('.project-dialog-track');
+    const projectGalleryPrev = document.querySelector('.project-gallery-prev');
+    const projectGalleryNext = document.querySelector('.project-gallery-next');
+    const projectGalleryDots = document.querySelector('.project-gallery-dots');
     const projectDialogTitle = document.querySelector('#project-dialog-title');
     const projectDialogCategory = document.querySelector('.project-dialog-category');
     const projectDialogDescription = document.querySelector('.project-dialog-description');
+    const projectDemoButton = document.querySelector('.project-demo-btn');
     const projectDialogYear = document.querySelector('.project-dialog-year');
     const projectDialogRole = document.querySelector('.project-dialog-role');
     const projectDialogTools = document.querySelector('.project-dialog-tools');
@@ -161,26 +188,122 @@ const projects = [
 
     if (
       projectDialog instanceof HTMLDialogElement &&
-      projectDialogImage instanceof HTMLImageElement &&
+      projectDialogGallery instanceof HTMLElement &&
+      projectDialogTrack instanceof HTMLElement &&
+      projectGalleryPrev instanceof HTMLButtonElement &&
+      projectGalleryNext instanceof HTMLButtonElement &&
+      projectGalleryDots instanceof HTMLElement &&
       projectDialogTitle instanceof HTMLHeadingElement &&
       projectDialogCategory instanceof HTMLElement &&
       projectDialogDescription instanceof HTMLParagraphElement &&
+      projectDemoButton instanceof HTMLAnchorElement &&
       projectDialogYear instanceof HTMLElement &&
       projectDialogRole instanceof HTMLElement &&
       projectDialogTools instanceof HTMLElement &&
       projectDialogClose instanceof HTMLButtonElement
     ) {
+      type ProjectMedia = { type: 'image' | 'video'; src: string };
+
+      const renderMedia = (media: ProjectMedia[], title: string) => {
+        projectDialogTrack.replaceChildren();
+        projectGalleryDots.replaceChildren();
+        media.forEach((item, index) => {
+          const slide = document.createElement('div');
+          slide.className = 'project-dialog-slide';
+
+          if (item.type === 'image') {
+            const imageElement = document.createElement('img');
+            imageElement.src = item.src;
+            imageElement.alt = `${title} image ${index + 1}`;
+            slide.append(imageElement);
+          } else {
+            let youtubeId: string | null = null;
+            try {
+              const parsedUrl = new URL(item.src);
+              if (parsedUrl.hostname === 'youtu.be') {
+                youtubeId = parsedUrl.pathname.slice(1);
+              } else if (parsedUrl.hostname.endsWith('youtube.com')) {
+                youtubeId =
+                  parsedUrl.searchParams.get('v') ?? parsedUrl.pathname.split('/').pop() ?? null;
+              }
+            } catch {
+              youtubeId = null;
+            }
+
+            if (youtubeId) {
+              const iframe = document.createElement('iframe');
+              iframe.src = `https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}?autoplay=1&mute=1&controls=1`;
+              iframe.title = `${title} video`;
+              iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+              iframe.allowFullscreen = true;
+              slide.append(iframe);
+            } else {
+              const videoElement = document.createElement('video');
+              videoElement.src = item.src;
+              videoElement.controls = true;
+              videoElement.autoplay = true;
+              videoElement.loop = true;
+              videoElement.muted = true;
+              videoElement.playsInline = true;
+              videoElement.setAttribute('aria-label', `${title} video`);
+              slide.append(videoElement);
+            }
+          }
+
+          const dot = document.createElement('button');
+          dot.className = 'project-gallery-dot';
+          dot.classList.toggle('is-active', index === 0);
+          dot.type = 'button';
+          dot.ariaLabel = `Show image ${index + 1}`;
+          dot.addEventListener('click', () => {
+            slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+          });
+          projectGalleryDots.append(dot);
+          projectDialogTrack.append(slide);
+        });
+
+        const hasMultipleMedia = media.length > 1;
+        projectGalleryPrev.hidden = !hasMultipleMedia;
+        projectGalleryNext.hidden = !hasMultipleMedia;
+        projectGalleryDots.hidden = !hasMultipleMedia;
+      };
+
       document.querySelectorAll<HTMLButtonElement>('.project-card').forEach((card) => {
         card.addEventListener('click', () => {
-          projectDialogImage.src = card.dataset.projectImage ?? '';
-          projectDialogImage.alt = card.dataset.projectTitle ?? '';
-          projectDialogTitle.textContent = card.dataset.projectTitle ?? '';
+          const title = card.dataset.projectTitle ?? '';
+          const images = JSON.parse(card.dataset.projectImages ?? '[]') as string[];
+          const video = card.dataset.projectVideo;
+          const media: ProjectMedia[] = images.map((src) => ({ type: 'image', src }));
+          if (video) media.push({ type: 'video', src: video });
+          renderMedia(media, title);
+          projectDialogTitle.textContent = title;
           projectDialogCategory.textContent = card.dataset.projectCategory ?? '';
           projectDialogDescription.textContent = card.dataset.projectDescription ?? '';
+          const liveDemo = card.dataset.projectLiveDemo;
+          projectDemoButton.hidden = !liveDemo;
+          if (liveDemo) {
+            projectDemoButton.href = liveDemo;
+          }
           projectDialogYear.textContent = card.dataset.projectYear ?? '';
           projectDialogRole.textContent = card.dataset.projectRole ?? '';
           projectDialogTools.textContent = card.dataset.projectTools ?? '';
           projectDialog.showModal();
+        });
+      });
+
+      const scrollGallery = (direction: number) => {
+        projectDialogTrack.scrollBy({
+          left: direction * projectDialogTrack.clientWidth,
+          behavior: 'smooth',
+        });
+      };
+
+      projectGalleryPrev.addEventListener('click', () => scrollGallery(-1));
+      projectGalleryNext.addEventListener('click', () => scrollGallery(1));
+      projectDialogTrack.addEventListener('scroll', () => {
+        const index = Math.round(projectDialogTrack.scrollLeft / projectDialogTrack.clientWidth);
+        projectGalleryDots.querySelectorAll<HTMLButtonElement>('.project-gallery-dot').forEach((dot, dotIndex) => {
+          dot.classList.toggle('is-active', dotIndex === index);
         });
       });
 
