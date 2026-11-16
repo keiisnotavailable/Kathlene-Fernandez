@@ -123,7 +123,7 @@ body::after {
   margin-top: 15px;
   line-height: 1.4;
   font-weight: 300;
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .nav-menu {
@@ -157,8 +157,9 @@ body::after {
 
 .sidebar-footer {
   font-size: 0.7rem;
-  color: #333;
+  color: var(--text-muted);
   letter-spacing: 1px;
+  opacity: 0.7;
 }
 
 .content-container {
@@ -281,13 +282,41 @@ section {
   border-top: 1px solid var(--border-color);
   padding: 28px 36px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .card-caption h2 {
   font-size: 1.6rem;
   font-weight: 400;
+}
+
+.hero-projects-link {
+  flex-shrink: 0;
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-projects-link span {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform 0.2s ease;
+}
+
+.hero-projects-link:hover,
+.hero-projects-link:focus-visible {
+  color: var(--accent);
+}
+
+.hero-projects-link:hover span,
+.hero-projects-link:focus-visible span {
+  transform: translateX(4px);
 }
 
 .card-caption p {
@@ -1112,11 +1141,33 @@ section {
   .content-container {
     margin-left: 0;
     width: 100%;
-    padding: 40px 20px;
+    padding: 20px 20px;
   }
   .hero-card {
     aspect-ratio: auto;
-    min-height: 380px;
+    min-height: 440px;
+  }
+  .hero-visual {
+    background-position: center 35%;
+  }
+  .card-caption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 22px;
+  }
+  .card-caption h2 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+  .hero-projects-link {
+    font-size: 0.72rem;
+  }
+  .name-pill {
+    top: 16px;
+    left: 16px;
+    padding: 9px 18px;
+    font-size: 0.95rem;
   }
   .timeline-item {
     grid-template-columns: 1fr;
