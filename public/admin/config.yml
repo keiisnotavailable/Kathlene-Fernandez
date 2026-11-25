@@ -1,0 +1,105 @@
+backend:
+  name: github
+  repo: keiisnotavailable/Kathlene-Fernandez
+  branch: main
+  base_url: https://kathlene-fernandez.vercel.app
+  auth_endpoint: api/auth
+
+local_backend: true
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: site
+    label: Site Content
+    files:
+      - name: profile
+        label: Profile & Contact
+        file: src/data/profile.json
+        fields:
+          - { name: firstName, label: First name (home display), widget: string }
+          - { name: lastName, label: Last name (home display), widget: string }
+          - { name: displayName, label: Full name, widget: string }
+          - { name: brand, label: Sidebar logo, widget: string }
+          - { name: jobTitle, label: Home headline, widget: string }
+          - { name: tagline, label: Sidebar tagline, widget: string }
+          - { name: academicLabel, label: Sidebar footer, widget: string }
+          - { name: course, label: Course, widget: string }
+          - { name: yearLevel, label: Year level, widget: string }
+          - { name: school, label: School, widget: string }
+          - { name: aboutLead, label: About introduction, widget: text }
+          - { name: aboutBio, label: About biography, widget: text }
+          - label: Interests
+            name: interests
+            widget: list
+            field: { label: Interest, name: interest, widget: string }
+          - { name: contactIntro, label: Contact introduction, widget: text }
+          - { name: email, label: Email, widget: string }
+          - { name: phone, label: Phone, widget: string }
+          - { name: resumePath, label: Resume file, widget: file }
+          - label: Social links
+            name: socials
+            widget: list
+            fields:
+              - { name: label, label: Name, widget: string }
+              - { name: url, label: URL, widget: string }
+
+      - name: projects
+        label: Projects
+        file: src/data/projects.json
+        fields:
+          - label: Projects
+            name: projects
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Project title, widget: string }
+              - label: Images
+                name: images
+                widget: list
+                field: { label: Image, name: image, widget: image }
+              - { name: video, label: Video URL or file path (optional), widget: string, required: false }
+              - { name: category, label: Category, widget: string }
+              - { name: year, label: Year, widget: string }
+              - { name: role, label: Role, widget: string }
+              - { name: tools, label: Tools, widget: string }
+              - { name: description, label: Description, widget: text }
+              - { name: liveDemo, label: Live demo URL (optional), widget: string, required: false }
+
+      - name: skills
+        label: Skills & Badges
+        file: src/data/skills.json
+        fields:
+          - label: Skill groups
+            name: groups
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Group title, widget: string }
+              - label: Skills
+                name: items
+                widget: list
+                field: { label: Skill, name: skill, widget: string }
+          - label: Badges & certifications
+            name: badges
+            widget: list
+            summary: "{{fields.alt}}"
+            fields:
+              - { name: image, label: Badge image, widget: image }
+              - { name: alt, label: Image description, widget: string }
+              - { name: url, label: Badge URL, widget: string }
+
+      - name: achievements
+        label: Achievements
+        file: src/data/achievements.json
+        fields:
+          - label: Achievements
+            name: achievements
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: year, label: Year, widget: string }
+              - { name: tag, label: Category, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: description, label: Description, widget: text }

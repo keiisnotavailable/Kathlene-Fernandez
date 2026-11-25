@@ -1,17 +1,18 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import profile from '../data/profile.json';
 ---
 
 <SiteLayout title="Home" activePage="home" background="/hero-bg-bg.jpg">
   <section id="hero" class="hero-section">
     <div class="hero-card">
       <div class="name-pill">
-        kathlene <span class="cursive">fernandez</span>
+        {profile.firstName} <span class="cursive">{profile.lastName}</span>
       </div>
       <div class="hero-visual">
       </div>
       <div class="card-caption">
-        <h2>Full-Stack Dev & Multimedia Designer</h2>
+        <h2>{profile.jobTitle}</h2>
         <a class="hero-projects-link" href="/projects">View Projects <span aria-hidden="true">→</span></a>
       </div>
     </div>

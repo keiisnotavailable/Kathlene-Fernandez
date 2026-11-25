@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import skills from '../data/skills.json';
 ---
 
 <SiteLayout title="Skills" activePage="skills" background="/skills-bg.jpg">
@@ -9,58 +10,29 @@ import SiteLayout from '../layouts/SiteLayout.astro';
       <h2>Tools & Core Competencies</h2>
     </div>
     <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Design & Multimedia</h3>
-        <ul class="skill-list">
-          <li>Figma (UI/UX & Protoyping)</li>
-          <li>Canva</li>
-          <li>Adobe Creative Suite</li>
-          <li>Video Editing (mainly Capcut) / CSS3</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Web & Interactive</h3>
-        <ul class="skill-list">
-          <li>React / React Native</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Tailwind CSS</li>
-        </ul>
-      </div>
-      <div class="skill-card">
-        <h3>Development & Tools</h3>
-        <ul class="skill-list">
-          <li>Unity 3D (Interactive Assets)</li>
-          <li>Git & GitHub</li>
-          <li>Firebase</li>
-        </ul>
-      </div>
+      {skills.groups.map((group) => (
+        <div class="skill-card">
+          <h3>{group.title}</h3>
+          <ul class="skill-list">
+            {group.items.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
     </div>
     <div class="badges-section">
       <span class="subtitle">badges &amp; certifications</span>
       <div class="badges-grid">
-        <a
-          class="badge-card"
-          href="https://www.credly.com/badges/c31fe3a9-f30c-4568-88b9-bcf3442a0288/public_url"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View AI Literacy badge"
-        >
-          <img src="/ai-literacy.png" alt="AI Literacy badge" loading="lazy" />
-        </a>
-        <a
-          class="badge-card"
-          href="https://www.credly.com/badges/b38ebf32-6703-4abc-bfc5-7a4e384e4503/public_url"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="View Introduction to Packet Tracer badge"
-        >
-          <img
-            src="/introduction-to-packet-tracer.png"
-            alt="Introduction to Packet Tracer badge"
-            loading="lazy"
-          />
-        </a>
+        {skills.badges.map((badge) => (
+          <a
+            class="badge-card"
+            href={badge.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${badge.alt}`}
+          >
+            <img src={badge.image} alt={badge.alt} loading="lazy" />
+          </a>
+        ))}
       </div>
     </div>
   </section>

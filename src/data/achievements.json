@@ -1,0 +1,52 @@
+{
+  "achievements": [
+    {
+      "year": "2026",
+      "tag": "leadership",
+      "title": "Lead Programmer — Capstone Project",
+      "description": "Architected end-to-end frontend interfaces for web app, designed high-fidelity interactive wireframes, custom UI components, and design systems in Figma focusing on visual hierarchy and accessibility, integrating AI-driven content generation tools. flows for the pet management system \"TAILS: An Intelligent Animal Welfare Management System\"."
+    },
+    {
+      "year": "2026",
+      "tag": "game design",
+      "title": "Game & Narrative UI Developer",
+      "description": "Developed an immersive first-person utility and horror game in Unity utilizing precise proximity and relative trigger mechanics."
+    },
+    {
+      "year": "2026",
+      "tag": "Learning & Certifications",
+      "title": "Basic Cisco Networking",
+      "description": "Completed certification in basic Cisco networking principles and practices. (Yes, I actually know what an IP address is now.)"
+    },
+    {
+      "year": "2026",
+      "tag": "Learning & Certifications",
+      "title": "IBM SkillsBuild - AI Powered Racing Course",
+      "description": "Completed learning in AI-powered racing course design and implementation."
+    },
+    {
+      "year": "2026",
+      "tag": "Learning & Certifications",
+      "title": "IBM SkillsBuild - AI Literacy",
+      "description": "Earned certification in core AI concepts, exploring how machine learning models and generative AI tools enhance modern UI design systems and interactive workflows."
+    },
+    {
+      "year": "2026",
+      "tag": "Learning & Certifications",
+      "title": "IBM SkillsBuild - Git Tutorials",
+      "description": "Completed learning in Git version control and collaborative development practices. Mostly just learned how to pray before running 'git push'."
+    },
+    {
+      "year": "Current",
+      "tag": "academic",
+      "title": "SM Scholar",
+      "description": "Maintaining strong academic performance standards and technical representation within the school and company program."
+    },
+    {
+      "year": "Current",
+      "tag": "academic",
+      "title": "Dean's Lister - A.Y 2023-2026",
+      "description": "Recognized for maintaining exceptional academic performance throughout the specified academic years."
+    }
+  ]
+}

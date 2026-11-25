@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
+import profile from '../data/profile.json';
 ---
 
 <SiteLayout title="About" activePage="about" background="/about-bg.jpg">
@@ -13,46 +14,32 @@ import SiteLayout from '../layouts/SiteLayout.astro';
         <div class="details-table">
           <div class="detail-row">
             <span class="label">Name:</span>
-            <span class="value">Kathlene Fernandez</span>
+            <span class="value">{profile.displayName}</span>
           </div>
           <div class="detail-row">
             <span class="label">Course:</span>
-            <span class="value">BSIT-MWA</span>
+            <span class="value">{profile.course}</span>
           </div>
           <div class="detail-row">
             <span class="label">Year Level:</span>
-            <span class="value">4th Year</span>
+            <span class="value">{profile.yearLevel}</span>
           </div>
           <div class="detail-row">
             <span class="label">School:</span>
-            <span class="value">National University - MOA</span>
+            <span class="value">{profile.school}</span>
           </div>
         </div>
       </div>
       <div class="about-bio-card">
-        <p class="lead">
-          I am a learning and aspiring full stack developer specializing in web application.
-        </p>
-        <p>
-          I specialize in bridging creative multimedia design and interactive web experiences. My goal is to craft visually 
-          engaging user interfaces, brand assets, and digital media backed 
-          by clean design systems and intuitive user flows.
-        </p>
+        <p class="lead">{profile.aboutLead}</p>
+        <p>{profile.aboutBio}</p>
       </div>
     </div>
 
     <div class="favorites-section">
       <span class="fav-title">Interests & Preferences</span>
       <div class="fav-tags">
-        <span class="pill-dark">Animals</span>
-        <span class="pill-dark">Sports</span>
-        <span class="pill-dark">Anime</span>
-        <span class="pill-dark">Music</span>
-        <span class="pill-dark">Flowers</span>
-        <span class="pill-dark">Web Design</span>
-        <span class="pill-dark">Retro</span>
-        <span class="pill-dark">Swiss Design</span>
-        <span class="pill-dark">Y2K</span>
+        {profile.interests.map((interest) => <span class="pill-dark">{interest}</span>)}
       </div>
     </div>
   </section>

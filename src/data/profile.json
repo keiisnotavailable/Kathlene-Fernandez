@@ -1,0 +1,51 @@
+{
+  "firstName": "kathlene",
+  "lastName": "fernandez",
+  "displayName": "Kathlene Fernandez",
+  "brand": "kei.",
+  "jobTitle": "Full-Stack Dev & Multimedia Designer",
+  "tagline": "Full Stack Developer & Multimedia Design",
+  "academicLabel": "NU MOA • BSIT",
+  "course": "BSIT-MWA",
+  "yearLevel": "4th Year",
+  "school": "National University - MOA",
+  "aboutLead": "I am a learning and aspiring full stack developer specializing in web application.",
+  "aboutBio": "I specialize in bridging creative multimedia design and interactive web experiences. My goal is to craft visually engaging user interfaces, brand assets, and digital media backed by clean design systems and intuitive user flows.",
+  "interests": [
+    "Animals",
+    "Sports",
+    "Anime",
+    "Music",
+    "Flowers",
+    "Web Design",
+    "Retro",
+    "Swiss Design",
+    "Y2K"
+  ],
+  "contactIntro": "I am always excited to collaborate and learn more!",
+  "email": "kathlenefernandez897@gmail.com",
+  "phone": "+63 966 566 6195",
+  "resumePath": "/resume.pdf",
+  "socials": [
+    {
+      "label": "github",
+      "url": "https://github.com/keiisnotavailable"
+    },
+    {
+      "label": "linkedin",
+      "url": "https://www.linkedin.com/in/kathlene-fernandez-78967a39b/"
+    },
+    {
+      "label": "facebook",
+      "url": "https://web.facebook.com/keidaisies"
+    },
+    {
+      "label": "instagram",
+      "url": "https://www.instagram.com/tmisukei.k"
+    },
+    {
+      "label": "twitter",
+      "url": "https://twitter.com/keizynk"
+    }
+  ]
+}

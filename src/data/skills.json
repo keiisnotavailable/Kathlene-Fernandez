@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "title": "Design & Multimedia",
+      "items": [
+        "Figma (UI/UX & Protoyping)",
+        "Canva",
+        "Adobe Creative Suite",
+        "Video Editing (mainly Capcut) / CSS3"
+      ]
+    },
+    {
+      "title": "Web & Interactive",
+      "items": [
+        "React / React Native",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "title": "Development & Tools",
+      "items": [
+        "Unity 3D (Interactive Assets)",
+        "Git & GitHub",
+        "Firebase"
+      ]
+    }
+  ],
+  "badges": [
+    {
+      "image": "/ai-literacy.png",
+      "alt": "AI Literacy badge",
+      "url": "https://www.credly.com/badges/c31fe3a9-f30c-4568-88b9-bcf3442a0288/public_url"
+    },
+    {
+      "image": "/introduction-to-packet-tracer.png",
+      "alt": "Introduction to Packet Tracer badge",
+      "url": "https://www.credly.com/badges/b38ebf32-6703-4abc-bfc5-7a4e384e4503/public_url"
+    }
+  ]
+}

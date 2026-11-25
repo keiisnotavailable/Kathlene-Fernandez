@@ -1,100 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-
-const projects = [
-  {
-    title: 'MBY TAILS',
-    images: ['/mby.png', '/mby3.png', '/mby4.png', '/mby5.png'], 
-    category: 'Capstone Project',
-    year: '2026',
-    role: 'Lead Programmer, Web UI/UX Designer',
-    tools: 'Figma, Canva, React, Tailwind CSS, JavaScript, Node.js, Express, Firebase, Git',
-    description: 'An intelligent animal welfare management platform designed to streamline shelter operations and accelerate pet adoptions for MBY Pet Rescue and Sanctuary. Features an end-to-end design system, accessible UI flows, interactive matchmaking tools, and automated AI bio generation.',
-    liveDemo: 'https://mby-tails.com/',
-  },
-  {
-    title: 'Bulldogs eXchange',
-    images: ['/bulldogs-exchange.png', '/bulldogs2.png'],
-    video: '/bulldogsvid.mp4',
-    category: 'Game Development, Video Editing',
-    year: '2026',
-    role: 'Game UI/UX, Visual Designer ',
-    tools: 'Unity, Figma, Visual Asset Integration, C#',
-    description: 'A 3D Weeping Angel horror interactive game and storytelling experience created in Unity. Highlights custom retro typography, immersive UI/UX layout design, C# mechanics, and video editing for dynamic gameplay sequences.',
-  },
-  {
-    title: 'Moonstoria Hotel',
-    images: ['/moonstoria.png', '/moonstoria2.png', '/moonstoria3.png'],
-    category: 'Full Stack Web Development, UI/UX Project',
-    year: '2026',
-    role: 'UI/UX Developer, Visual Designer',
-    tools: 'MongoDB, Express, React, Node.js, Tailwind CSS, Figma, Canva',
-    description: 'A full-stack hotel booking interface featuring a dark gothic aesthetic, high-contrast typography, and atmospheric visual storytelling. Crafted custom visual assets in Figma and Canva, paired with an intuitive booking flow, custom crypt/room selection inputs, and smooth micro-interactions across modern web frameworks.',
-  },
-  {
-    title: 'ICONIK Tote Shop',
-    images: ['/iconik.jpg', '/iconik2.jpg', '/iconik3.jpg', '/iconik4.jpg'],
-    category: 'Web System Design, Prototype',
-    year: '2025',
-    role: 'Web Design Developer',
-    tools: 'Figma, Canva',
-    description: 'An e-commerce prototype and brand identity project blending art, fashion, and functional design. Features high-fidelity Figma prototypes, custom typography layouts, product showcase carousels, and minimalist navigation.',
-  },
-  {
-    title: 'Fila Fusion ZH',
-    images: ['/fila.png', '/fila2.png', '/fila3.png', '/fila4.png'],
-    category: 'Web System Design',
-    year: '2025',
-    role: 'Web Design Developer',
-    tools: 'Figma, Canva, HTML5, CSS3',
-    description: 'A modern web system and interface design concept crafted for FILA FUSION Zhang Hao edition. Features custom brand layout components, high-contrast typography, seamless authentication UI, and campaign media integration.',
-  },
-  {
-    title: 'MBY TAILS Poster',
-    images: ['/tails.png', '/tails2.png', '/tails3.png'],
-    category: 'Graphic Poster',
-    year: '2026',
-    role: 'Graphic Designer',
-    tools: 'Canva',
-    description: 'A promotional capstone poster for TAILS: An Intelligent Animal Welfare Management System. Features a duo-tone collage composition with halftone textures, structured typography hierarchy, and branded visual elements tailored for formal academic presentation and public display.',
-  },
-  {
-    title: 'Capstone Respondents PubMat',
-    images: ['/web pubmat.png'],
-    category: 'Publication Material',
-    year: '2026',
-    role: 'Graphic Designer',
-    tools: 'Canva',
-    description: 'A promotional digital pubmat designed to drive user survey participation for the TAILS capstone evaluation. Combines playful typography, custom QR asset design, and web preview mockups for social media distribution.',
-  },
-  {
-    title: 'ZH Cup Sleeve Event PubMat',
-    images: ['/cse.jpg'],
-    category: 'Publication Material',
-    year: '2025',
-    role: 'Graphic Designer',
-    tools: 'Canva',
-    description: 'A promotional poster designed for a fan-organized cup sleeve event celebrating ZEROBASEONE’s Zhang Hao on his birthday. Inspired by MotoGP racing aesthetics and FILA FUSION x Ducati campaign visuals, the graphic combines high-speed motion typography, futuristic dark UI accents, and vibrant Ducati-red color blocking.',
-  },
-  {
-    title: 'This is Kei! Personal Intro PubMat',
-    images: ['/personal-graphic.png'],
-    category: 'Graphic Design',
-    year: '2026',
-    role: 'Graphic Designer',
-    tools: 'Adobe Express',
-    description: 'A personal graphic design piece built for self-introduction. The graphic combines playful collage aesthetics with a bold, youth-centric color scheme to make a memorable first impression.',
-  },
-  {
-    title: 'PAPAYA Thread Line Brand Board',
-    images: ['/brand-board.jpg'],
-    category: 'Brand Identity',
-    year: '2025',
-    role: 'Brand Designer',
-    tools: 'Canva',
-    description: 'A motorsport-inspired brand identity board developed for Papaya Thread Line, a streetwear concept rooted in Formula 1 racing culture. Drawing directly from McLaren’s iconic papaya orange livery and paddock aesthetics, the identity translates high-speed track energy into bold, wearable fashion under the tagline "From Grid to Street — Mc-Engineered to Wear!"',
-  },
-];
+import { projects } from '../data/projects.json';
 ---
 
 <SiteLayout title="Projects" activePage="projects" background="/achievements-bg.jpg">
@@ -154,7 +60,7 @@ const projects = [
         <p class="project-dialog-description"></p>
         <a
           class="project-demo-btn"
-          href="https://mby-tails.com/"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
           hidden

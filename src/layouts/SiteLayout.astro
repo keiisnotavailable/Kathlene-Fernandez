@@ -1,5 +1,6 @@
 ---
 import '../styles.css';
+import profile from '../data/profile.json';
 
 interface Props {
   title: string;
@@ -25,7 +26,7 @@ const navigation = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Kathlene Fernandez Portfolio</title>
+    <title>{title} | {profile.displayName} Portfolio</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,9 +39,9 @@ const navigation = [
   <body class="page-bg" style={`background-image: url('${background}');`}>
     <aside class="sidebar">
       <div class="logo-container">
-        <span class="logo">kei.</span>
+        <span class="logo">{profile.brand}</span>
         <span class="logo-sub">portfolio</span>
-        <div class="logo-tagline">Full Stack Developer & Multimedia Design</div>
+        <div class="logo-tagline">{profile.tagline}</div>
       </div>
       <button
         class="menu-toggle"
@@ -59,7 +60,7 @@ const navigation = [
         ))}
       </nav>
       <div class="sidebar-footer">
-        <span>NU MOA • BSIT</span>
+        <span>{profile.academicLabel}</span>
       </div>
     </aside>
 
