@@ -39,15 +39,7 @@ const navigation = [
   <body class="page-bg" style={`background-image: url('${background}');`}>
     <aside class="sidebar">
       <div class="logo-container">
-        <button
-          class="logo owner-login-trigger cursor-pointer select-none"
-          type="button"
-          aria-label="Open owner access"
-          aria-haspopup="dialog"
-          aria-controls="owner-login-dialog"
-        >
-          {profile.brand}
-        </button>
+        <span class="logo">{profile.brand}</span>
         <span class="logo-sub">portfolio</span>
         <div class="logo-tagline">{profile.tagline}</div>
       </div>
@@ -72,23 +64,6 @@ const navigation = [
       </div>
     </aside>
 
-    <dialog class="owner-login-dialog" id="owner-login-dialog" aria-labelledby="owner-login-title" aria-describedby="owner-login-description">
-      <div class="owner-login-card">
-        <button class="owner-login-close" type="button" aria-label="Close owner access">
-          &times;
-        </button>
-        <span class="owner-login-label">Owner Access</span>
-        <h2 id="owner-login-title">kei. admin workspace</h2>
-        <p id="owner-login-description">
-          Sign in with your authorized GitHub account to manage projects, skills, achievements, and profile details.
-        </p>
-        <a class="owner-login-continue" href="/admin/">
-          Continue to Owner Editor
-        </a>
-        <button class="owner-login-cancel" type="button">Cancel</button>
-      </div>
-    </dialog>
-
     <main class="content-container">
       <slot />
     </main>
@@ -111,32 +86,6 @@ const navigation = [
 
       const sidebar = document.querySelector('.sidebar');
       const menuToggle = document.querySelector('.menu-toggle');
-      const ownerLoginTrigger = document.querySelector('.owner-login-trigger');
-      const ownerLoginDialog = document.querySelector('.owner-login-dialog');
-      const ownerLoginClose = document.querySelector('.owner-login-close');
-      const ownerLoginCancel = document.querySelector('.owner-login-cancel');
-
-      if (
-        ownerLoginTrigger instanceof HTMLButtonElement &&
-        ownerLoginDialog instanceof HTMLDialogElement &&
-        ownerLoginClose instanceof HTMLButtonElement &&
-        ownerLoginCancel instanceof HTMLButtonElement
-      ) {
-        ownerLoginTrigger.addEventListener('click', () => ownerLoginDialog.showModal());
-        ownerLoginClose.addEventListener('click', () => ownerLoginDialog.close());
-        ownerLoginCancel.addEventListener('click', () => ownerLoginDialog.close());
-        ownerLoginDialog.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape') {
-            event.preventDefault();
-            ownerLoginDialog.close();
-          }
-        });
-        ownerLoginDialog.addEventListener('click', (event) => {
-          if (event.target === ownerLoginDialog) {
-            ownerLoginDialog.close();
-          }
-        });
-      }
 
       if (sidebar instanceof HTMLElement && menuToggle instanceof HTMLButtonElement) {
         menuToggle.addEventListener('click', () => {
