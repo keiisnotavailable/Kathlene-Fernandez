@@ -2,7 +2,7 @@
 
 ## Owner admin
 
-The private editor is available at `/admin/`. It manages project entries, profile and contact details, skills, badges, and achievements. Saving in Decap CMS commits the content to the `main` branch; Vercel then rebuilds the public site.
+The owner login modal opens when you click `kei.` in the sidebar; the editor is also available directly at `/admin/`. It manages project entries, profile and contact details, skills, badges, and achievements. Saving in Decap CMS commits the content to the `main` branch; Vercel then rebuilds the public site.
 
 ### One-time Vercel and GitHub setup
 
